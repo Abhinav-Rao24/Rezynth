@@ -1,5 +1,5 @@
 --[[
-  ReaSig — extraction/track.lua
+  Rezynth — extraction/track.lua
   Reads metadata and FX chain for the first selected track.
   FX chain is nested inside the returned table so the entire
   track_metadata dict can be sent as-is in the protocol payload.

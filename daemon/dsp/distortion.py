@@ -1,5 +1,5 @@
 """
-ReaSig DSP - Harmonic Distortion (THD)
+Rezynth DSP - Harmonic Distortion (THD)
 
 Estimates Total Harmonic Distortion by finding the dominant fundamental
 frequency and measuring relative energy at its 2nd through 5th harmonics.

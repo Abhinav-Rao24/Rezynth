@@ -1,5 +1,5 @@
 """
-ReaSig Daemon - Configuration
+Rezynth Daemon - Configuration
 
 Loads configuration from environment variables (via .env file).
 """
@@ -34,9 +34,9 @@ class Config:
         errors = []
         # Note: missing API key is handled as a warning in __main__.py, not a hard error
         if not self.model:
-            errors.append("REASIG_MODEL is not set.")
+            errors.append("REZYNTH_MODEL is not set.")
         if not (1024 <= self.port <= 65535):
-            errors.append(f"REASIG_PORT must be between 1024 and 65535, got {self.port}")
+            errors.append(f"REZYNTH_PORT must be between 1024 and 65535, got {self.port}")
         return errors
 
 
@@ -51,20 +51,20 @@ def load_config() -> Config:
         load_dotenv(env_path)
 
     # Build temp directory
-    temp_dir_str = os.environ.get("REASIG_TEMP_DIR", "")
+    temp_dir_str = os.environ.get("REZYNTH_TEMP_DIR", "")
     if temp_dir_str:
         temp_dir = Path(temp_dir_str)
     else:
-        temp_dir = Path(tempfile.gettempdir()) / "reasig"
+        temp_dir = Path(tempfile.gettempdir()) / "rezynth"
 
     # Ensure temp dir exists
     temp_dir.mkdir(parents=True, exist_ok=True)
 
     return Config(
         openrouter_api_key=os.environ.get("OPENROUTER_API_KEY", ""),
-        model=os.environ.get("REASIG_MODEL", "openai/gpt-oss-120b:free"),
-        host=os.environ.get("REASIG_HOST", "127.0.0.1"),
-        port=int(os.environ.get("REASIG_PORT", "9876")),
+        model=os.environ.get("REZYNTH_MODEL", "openai/gpt-oss-120b:free"),
+        host=os.environ.get("REZYNTH_HOST", "127.0.0.1"),
+        port=int(os.environ.get("REZYNTH_PORT", "9876")),
         temp_dir=temp_dir,
         project_root=project_root,
     )

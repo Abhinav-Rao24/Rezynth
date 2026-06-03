@@ -1,1 +1,1 @@
-"""ReaSig Daemon Package."""
+"""Rezynth Daemon Package."""

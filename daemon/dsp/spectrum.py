@@ -1,5 +1,5 @@
 """
-ReaSig DSP - Spectral Analysis
+Rezynth DSP - Spectral Analysis
 
 Analyzes the frequency content of the audio signal.
 """

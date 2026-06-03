@@ -1,5 +1,5 @@
 """
-ReaSig DSP - Integrated Loudness (LUFS)
+Rezynth DSP - Integrated Loudness (LUFS)
 
 Measures integrated loudness per ITU-R BS.1770-4 using pyloudnorm.
 Reports absolute LUFS and per-platform deltas so the LLM can give

@@ -1,5 +1,5 @@
 --[[
-  ReaSig — reasig_main.lua
+  Rezynth — rezynth_main.lua
   Entry point. REAPER loads this file from the action list.
 
   Responsibilities:
@@ -51,8 +51,8 @@ local ui             = require("ui.chat")
 -- ── Initialize ─────────────────────────────────────────────────────────────
 ui.init()
 
-local REASIG_MODEL_DISPLAY = ""
-ui.set_model(REASIG_MODEL_DISPLAY)
+local REZYNTH_MODEL_DISPLAY = ""
+ui.set_model(REZYNTH_MODEL_DISPLAY)
 
 socket.connect()
 
@@ -101,7 +101,7 @@ _current_request_id = nil
 local _id_counter = 0
 local function make_id()
   _id_counter = _id_counter + 1
-  return string.format("reasig-%08x-%04d", os.time(), _id_counter)
+  return string.format("rezynth-%08x-%04d", os.time(), _id_counter)
 end
 
 -- ── Analyze button handler ─────────────────────────────────────────────────
@@ -233,7 +233,7 @@ local function loop()
       render.cleanup(_pending_wav)
       _pending_wav = nil
     end
-    reaper.ShowConsoleMsg("[ReaSig] Window closed.\n")
+    reaper.ShowConsoleMsg("[Rezynth] Window closed.\n")
   end
 end
 

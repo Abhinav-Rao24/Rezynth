@@ -1,5 +1,5 @@
 """
-ReaSig DSP - Noise Floor & Signal-to-Noise Ratio
+Rezynth DSP - Noise Floor & Signal-to-Noise Ratio
 
 Estimates the noise floor by finding the quietest 500ms windows in the
 signal. Works best on recordings with silent passages between notes/phrases

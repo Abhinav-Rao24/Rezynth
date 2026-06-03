@@ -1,1 +1,1 @@
-"""ReaSig DSP Package."""
+"""Rezynth DSP Package."""

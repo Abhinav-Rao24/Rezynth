@@ -1,10 +1,10 @@
-# ReaSig
+# Rezynth
 
 **DSP Track Analyser & AI Mix Assistant for REAPER**
 
-ReaSig is a REAPER utility that analyses your audio tracks using professional DSP algorithms and translates the results into specific, actionable mixing advice — powered by LLMs via [OpenRouter](https://openrouter.ai/). It runs as a floating chat window inside REAPER, referencing your actual plugin chains, exact parameter values, and measured signal characteristics.
+Rezynth is a REAPER utility that analyses your audio tracks using professional DSP algorithms and translates the results into specific, actionable mixing advice — powered by LLMs via [OpenRouter](https://openrouter.ai/). It runs as a floating chat window inside REAPER, referencing your actual plugin chains, exact parameter values, and measured signal characteristics.
 
-https://github.com/user-attachments/assets/91dff3d7-5d9c-43a3-a55e-1d47b94c9f02
+<video src="https://github.com/user-attachments/assets/91dff3d7-5d9c-43a3-a55e-1d47b94c9f02" controls="controls" muted="muted" style="max-width: 100%;"></video>
 
 ## Features
 
@@ -17,7 +17,7 @@ https://github.com/user-attachments/assets/91dff3d7-5d9c-43a3-a55e-1d47b94c9f02
 
 ## DSP Features
 
-ReaSig employs a suite of purpose-built audio analysis modules to extract meaningful data from your tracks:
+Rezynth employs a suite of purpose-built audio analysis modules to extract meaningful data from your tracks:
 
 - **Spectrum Analysis** (`librosa`) — Calculates spectral centroid, rolloff, and energy distribution across sub, bass, mid, and treble bands.
 - **Loudness & Metering** (`pyloudnorm`) — Accurately measures Integrated LUFS, Short-term LUFS, and True Peak levels to broadcast standards.
@@ -34,7 +34,7 @@ ReaSig employs a suite of purpose-built audio analysis modules to extract meanin
 
 ```text
                   [Track Metadata & Audio Path]
-  REAPER (Lua)  ─────────────────────────────────►  ReaSig Daemon (Python)
+  REAPER (Lua)  ─────────────────────────────────►  Rezynth Daemon (Python)
  (ReaImGui UI)  ◄─────────────────────────────────  (DSP Math + OpenRouter)
                      [Streaming LLM Text Chunks]
 ```
@@ -48,8 +48,8 @@ ReaSig employs a suite of purpose-built audio analysis modules to extract meanin
 
 ```bash
 # 1. Clone and setup
-git clone https://github.com/priyxansh/reasig.git
-cd reasig
+git clone https://github.com/Abhinav-Rao24/Rezynth.git
+cd Rezynth
 chmod +x setup.sh && ./setup.sh
 
 # 2. Add your OpenRouter API key
@@ -66,7 +66,7 @@ python -m daemon
 
 # 4. In REAPER:
 #    - Install ReaImGui via ReaPack (Extensions → ReaPack → Browse → search "ReaImGui")
-#    - Actions → Load ReaScript → select reascript/reasig_main.lua
+#    - Actions → Load ReaScript → select reascript/rezynth_main.lua
 #    - Run the action to open the chat window
 ```
 
@@ -80,7 +80,7 @@ python -m daemon
 ## Project Structure
 
 ```text
-reasig/
+rezynth/
 ├── daemon/                 # Standalone Python daemon process
 │   ├── dsp/                # Audio analysis algorithms
 │   ├── llm/                # OpenRouter API client & prompt engineering
@@ -90,7 +90,7 @@ reasig/
 │   ├── protocol.py         # JSON-lines IPC protocol
 │   └── config.py           # Configuration management
 ├── reascript/              # Runs inside REAPER
-│   ├── reasig_main.lua     # Main action entry script
+│   ├── rezynth_main.lua     # Main action entry script
 │   ├── ui/                 # ReaImGui chat window
 │   ├── bridge/             # TCP socket client to daemon
 │   ├── extraction/         # Track & FX metadata extraction

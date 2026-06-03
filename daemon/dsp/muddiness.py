@@ -1,5 +1,5 @@
 """
-ReaSig DSP - Muddiness and Tonal Imbalance Detection
+Rezynth DSP - Muddiness and Tonal Imbalance Detection
 
 Uses spectral data to flag common mixing issues.
 """

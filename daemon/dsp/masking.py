@@ -1,5 +1,5 @@
 """
-ReaSig DSP - Masking Analysis
+Rezynth DSP - Masking Analysis
 
 Analyzes frequency overlap between multiple tracks to detect masking.
 """

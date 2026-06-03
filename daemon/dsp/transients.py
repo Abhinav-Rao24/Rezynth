@@ -1,5 +1,5 @@
 """
-ReaSig DSP - Transient Analysis
+Rezynth DSP - Transient Analysis
 
 Analyzes onset detection, percussiveness, and transient shape.
 Attack and decay times (in ms) are measured to enable specific

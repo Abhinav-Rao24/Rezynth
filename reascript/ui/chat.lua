@@ -1,5 +1,5 @@
 --[[
-  ReaSig — ui/chat.lua
+  Rezynth — ui/chat.lua
   Main ReaImGui chat window.
 
   Rules for ImGui safety (prevents all pointer/stack errors):
@@ -8,7 +8,7 @@
     3. PushStyleColor / PushStyleVar are always paired with a matching Pop.
     4. ctx is created ONCE in M.init() and never recreated.
 
-  Callbacks wired by reasig_main.lua:
+  Callbacks wired by rezynth_main.lua:
     M.on_analyze_click = function(prompt, stereo_bool)
     M.on_chat_click    = function(prompt)
 --]]
@@ -26,12 +26,12 @@ local _stereo_enabled = false
 local _scroll_to_bot  = false
 local _is_connected   = false
 local _has_analysis   = false           -- true after first successful Analyze completes
-local _model_name     = "unknown model" -- shown in UI; set by reasig_main.lua via M.set_model()
+local _model_name     = "unknown model" -- shown in UI; set by rezynth_main.lua via M.set_model()
 
 local FONT_SIZE       = 16              -- configurable font size
 local _font           = nil
 
--- Public callbacks — set by reasig_main.lua
+-- Public callbacks — set by rezynth_main.lua
 M.on_analyze_click    = nil
 M.on_chat_click       = nil
 M.on_clear_click      = nil -- fired when the user clicks Clear (after in-memory wipe)
@@ -48,7 +48,7 @@ local COL_DIM         = 0x888888FF -- grey for labels
 
 ---Create the ImGui context. Call ONCE before the first draw().
 function M.init()
-  _ctx = reaper.ImGui_CreateContext("ReaSig")
+  _ctx = reaper.ImGui_CreateContext("Rezynth")
 
   _font = reaper.ImGui_CreateFont('sans-serif', FONT_SIZE)
   reaper.ImGui_Attach(_ctx, _font)
@@ -67,7 +67,7 @@ function M.set_connected(connected)
 end
 
 ---Signal that analysis context is available so the Chat button is enabled.
----Called by reasig_main.lua when the daemon reports has_history on startup
+---Called by rezynth_main.lua when the daemon reports has_history on startup
 ---or when an Analyze/Chat response completes.
 ---@param value boolean
 function M.set_has_analysis(value)
@@ -147,7 +147,7 @@ function M.draw()
   local window_flags = 0
 
   local count = reaper.CountSelectedTracks(0)
-  local title = string.format("ReaSig — %s  |  %d track%s###ReaSig",
+  local title = string.format("Rezynth — %s  |  %d track%s###Rezynth",
     _model_name,
     count,
     count == 1 and "" or "s"
@@ -177,7 +177,7 @@ end
 
 function _draw_header()
   -- Title
-  reaper.ImGui_Text(_ctx, "ReaSig")
+  reaper.ImGui_Text(_ctx, "Rezynth")
   reaper.ImGui_SameLine(_ctx)
 
   -- Connection status dot

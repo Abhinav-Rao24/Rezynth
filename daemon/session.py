@@ -1,5 +1,5 @@
 """
-ReaSig — Session Persistence via SQLite
+Rezynth — Session Persistence via SQLite
 
 Saves/loads per-project conversation history into a single SQLite database.
 Uses stdlib sqlite3.
@@ -15,11 +15,11 @@ import sqlite3
 from datetime import datetime, timezone
 from pathlib import Path
 
-logger = logging.getLogger("reasig.session")
+logger = logging.getLogger("rezynth.session")
 
 MAX_HISTORY_PAIRS = 50   # max user+assistant turn pairs stored per project
-_DB_DIR  = Path.home() / ".config" / "reasig"
-_DB_PATH = _DB_DIR / "reasig.db"
+_DB_DIR  = Path.home() / ".config" / "rezynth"
+_DB_PATH = _DB_DIR / "rezynth.db"
 
 
 # ── Helpers ────────────────────────────────────────────────────────────────

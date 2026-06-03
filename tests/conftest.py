@@ -1,5 +1,5 @@
 """
-Pytest configuration and fixtures for ReaSig DSP testing.
+Pytest configuration and fixtures for Rezynth DSP testing.
 
 Provides deterministic NumPy arrays for testing DSP modules
 without needing real .wav files.

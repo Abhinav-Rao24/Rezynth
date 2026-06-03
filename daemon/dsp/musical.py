@@ -1,5 +1,5 @@
 """
-ReaSig DSP - Musical Analysis
+Rezynth DSP - Musical Analysis
 
 Analyzes BPM and musical key.
 Key estimation uses Krumhansl-Kessler tonal hierarchy profiles, which

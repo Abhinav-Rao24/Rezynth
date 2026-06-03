@@ -1,5 +1,5 @@
 """
-ReaSig DSP - Spectral Balance vs Reference Curve
+Rezynth DSP - Spectral Balance vs Reference Curve
 
 Compares a track's spectral band energy distribution against a target curve
 representing a well-balanced commercial mix (simplified B72/Tonal Balance style).

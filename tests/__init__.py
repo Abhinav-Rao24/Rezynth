@@ -1,1 +1,1 @@
-# ReaSig ReaScript tests
+# Rezynth ReaScript tests
